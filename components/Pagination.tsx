@@ -11,7 +11,7 @@ import {
 
 const PaginationBar = () => {
     return(
-        <div className="pb-4">
+        <div className="p-6">
             <Pagination>
       <PaginationContent>
         <PaginationItem>

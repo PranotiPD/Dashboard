@@ -2,6 +2,7 @@ import * as React from 'react'
 import {  ArrowUpDownIcon, DownloadIcon } from "lucide-react"
 import { Button } from "./ui/button"
 import { Input } from "./ui/input"
+import PaginationBar from './Pagination'
 import {
     Table,
     TableBody,
@@ -32,8 +33,6 @@ import { ChevronDownIcon} from '@radix-ui/react-icons'
   type Payment = {
     id: string
     amount: number
-    status: "pending" | "processing" | "success" | "failed"
-    email: string
     date: string
     tamt: number
   }
@@ -44,120 +43,94 @@ import { ChevronDownIcon} from '@radix-ui/react-icons'
       date: "7 July, 2023",
       amount: 1278.23,
       tamt : 22,
-      status: "success",
-      email: "ken99@yahoo.com",
+     
     },
     {
       id: "#281209",
       date: "7 July, 2023",
       amount: 1278.23,
       tamt : 22,
-      status: "success",
-      email: "Abe45@gmail.com",
+      
     },
     {
       id: "#281209",
       date: "7 July, 2023",
       amount: 1278.23,
       tamt : 22,
-      status: "processing",
-      email: "Monserrat44@gmail.com",
+  
     },
     {
       id: "#281209",
       date: "7 July, 2023",
       amount: 1278.23,
       tamt : 22,
-      status: "success",
-      email: "Silas22@gmail.com",
+     
     },
     {
       id: "#281209",
       date: "7 July, 2023",
       amount: 1278.23,
       tamt : 22,
-      status: "failed",
-      email: "carmella@hotmail.com",
     },
     {
         id: "#281209",
         date: "7 July, 2023",
         amount: 1278.23,
         tamt : 22,
-        status: "success",
-        email: "ken99@yahoo.com",
       },
       {
         id: "#281209",
         date: "7 July, 2023",
         amount: 1278.23,
         tamt : 22,
-        status: "success",
-        email: "Abe45@gmail.com",
       },
       {
         id: "#281209",
         date: "7 July, 2023",
         amount: 1278.23,
         tamt : 22,
-        status: "processing",
-        email: "Monserrat44@gmail.com",
       },
       {
         id: "#281209",
         date: "7 July, 2023",
         amount: 1278.23,
         tamt : 22,
-        status: "success",
-        email: "Silas22@gmail.com",
       },
       {
         id: "#281209",
         date: "7 July, 2023",
         amount: 1278.23,
         tamt : 22,
-        status: "failed",
-        email: "carmella@hotmail.com",
       },
       {
         id: "#281209",
         date: "7 July, 2023",
         amount: 1278.23,
         tamt : 22,
-        status: "success",
-        email: "ken99@yahoo.com",
       },
       {
         id: "#281209",
         date: "7 July, 2023",
         amount: 1278.23,
         tamt : 22,
-        status: "success",
-        email: "Abe45@gmail.com",
       },
       {
         id: "#281209",
         date: "7 July, 2023",
         amount: 1278.23,
         tamt : 22,
-        status: "processing",
-        email: "Monserrat44@gmail.com",
       },
       {
         id: "#281209",
         date: "7 July, 2023",
         amount: 1278.23,
         tamt : 22,
-        status: "success",
-        email: "Silas22@gmail.com",
       },
       {
         id: "#281209",
         date: "7 July, 2023",
         amount: 1278.23,
         tamt : 22,
-        status: "failed",
-        email: "carmella@hotmail.com",
       },
 
   ]
@@ -241,7 +214,7 @@ const TableContent = () => {
     })
        
     return(
-        <div className="flex items-center flex-col w-full  p-4 rounded-lg">
+        <div className="flex items-center flex-col w-full bg-white p-4 rounded-lg">
         <div className='flex justify-around w-full mb-3 gap-2'>
         <div className=''>
         <Input
@@ -251,13 +224,13 @@ const TableContent = () => {
         </div>
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
-            <Button variant="outline" className="ml-auto text-lg text-[#4c4c4c]">
+            <Button variant="outline" className="ml-auto text-[#4D4D4D]">
               Sort <ArrowUpDownIcon className="ml-2 h-4 w-4" />
             </Button>
           </DropdownMenuTrigger>
           
         </DropdownMenu>
-        <Button variant={"outline"} className='text-[#4c4c4c]'>
+        <Button variant={"outline"} className='text-[#4D4D4D]'>
             <DownloadIcon />
         </Button>
         </div>
@@ -311,6 +284,7 @@ const TableContent = () => {
           </TableBody>
         </Table>
       </div>
+      <PaginationBar />
     </div>
     )
 }
