@@ -1,5 +1,5 @@
 import * as React from 'react'
-import {  DownloadIcon } from "lucide-react"
+import {  ArrowUpDownIcon, DownloadIcon } from "lucide-react"
 import { Button } from "./ui/button"
 import { Input } from "./ui/input"
 import {
@@ -181,7 +181,7 @@ import { ChevronDownIcon} from '@radix-ui/react-icons'
     },
     {
       accessorKey: "amount",
-      header: () => <div className="text-right">Amount</div>,
+      header: () => <div className="text-right">Order Amount</div>,
       cell: ({ row }) => {
         const amount = parseFloat(row.getValue("amount"))
    
@@ -241,28 +241,28 @@ const TableContent = () => {
     })
        
     return(
-        <div className="flex items-center py-4 flex-col w-full bg-white p-4 rounded-lg">
+        <div className="flex items-center flex-col w-full  p-4 rounded-lg">
         <div className='flex justify-around w-full mb-3 gap-2'>
         <div className=''>
         <Input
-          placeholder="Search by order ID"
-          className="max-w-sm"
+          placeholder="Search by order ID..."
+          className="max-full rounded-sm"
         />
         </div>
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
-            <Button variant="outline" className="ml-auto text-lg">
-              Sort <ChevronDownIcon className="ml-2 h-4 w-4" />
+            <Button variant="outline" className="ml-auto text-lg text-[#4c4c4c]">
+              Sort <ArrowUpDownIcon className="ml-2 h-4 w-4" />
             </Button>
           </DropdownMenuTrigger>
           
         </DropdownMenu>
-        <Button variant={"outline"}>
+        <Button variant={"outline"} className='text-[#4c4c4c]'>
             <DownloadIcon />
         </Button>
         </div>
         <div className="w-full py-3 border">
-        <Table className='border-white'>
+        <Table className='border-0'>
           <TableHeader className='bg-[#e5e7eb]'>
             {table.getHeaderGroups().map((headerGroup) => (
               <TableRow key={headerGroup.id}>
